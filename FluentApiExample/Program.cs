@@ -6,7 +6,7 @@ namespace FluentApiExample
     {
         static void Main(string[] args)
         {
-            var connection = FluentSqlConnection.CreateConnection()
+            var connection = FluentSqlConnection.CreateConnection(config => { config.ConnectionName = "Gigio connection"; })
                                                 .ForServer("localhost")
                                                 .AndDatabase("mydb")
                                                 .AsUser("gigio")

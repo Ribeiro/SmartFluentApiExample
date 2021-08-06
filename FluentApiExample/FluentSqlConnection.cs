@@ -16,7 +16,8 @@ namespace FluentApiExample
 
         public static IserverSelectionStage CreateConnection(Action<ConnectionConfiguration> config)
         {
-
+            var configuration = new ConnectionConfiguration();
+            config?.Invoke(configuration);
             return new FluentSqlConnection();
         }
 
